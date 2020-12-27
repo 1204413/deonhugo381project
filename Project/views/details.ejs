@@ -1,0 +1,63 @@
+<html>
+	<body>
+		<H2>Restaurant Details</H2><hr>
+		<p>Restaurant name: <%= restaurant.name %></p>
+		<p>ID: <%= restaurant._id %></p>
+		<p>
+			<% if (restaurant.borough) { %>
+			<%= "Borough : " + restaurant.borough %>
+			<% } %>
+		</p>
+		<p>
+			<% if (restaurant.cuisine) { %>
+			<%= "Cuisine : " + restaurant.cuisine %>
+			<% } %>
+		</p>
+		<p>
+			<% if (restaurant.photo) { %>
+			<img src="data:image/<%= restaurant.mimetype %>;base64, <%= restaurant.photo %>">
+			<% } %>
+		</p>
+		<p>
+			<% if (restaurant.address.street) { %>
+			<%= "Street : " + restaurant.address.street %>
+			<% } %>
+		</p>
+		<p>
+			<% if (restaurant.address.building) { %>
+			<%="Building : "+ restaurant.address.building %>
+			<% } %>
+		</p>
+		<p>
+			<% if (restaurant.address.zipcode) { %>
+			<%= "Zipecode : " + restaurant.address.zipcode %>
+			<% } %>
+		</p>
+		<p>
+			<% if (restaurant.address.coord) { %>
+			<%="Coord : " + restaurant.address.coord %>
+			<% } %>
+		</p>
+		<p>
+			
+		</p>
+		<p>
+			<% if (restaurant.address.coord) { %>
+			<a href="/map?lat=<%=restaurant.address.coord[0]%>&lon=<%=restaurant.address.coord[1]%>"><button>Map</button></a>
+			<% } %>
+		</p>
+		<p>
+			Rating :
+		</p>
+		<ol>
+           		<% for (var r of restaurant.Grades) { %>
+          		<li><%=r.score%> by <%=r.user%></li>
+			<% } %>
+		</ol>
+		<p>Created by : <%= restaurant.owner %></p>
+		<p><a href="/rate?_id=<%=restaurant._id%>&name=<%= restaurant.name%>&owner=<%=restaurant.owner%>"><button>Rate</button></a></p>
+		<p><a href="/edit?_id=<%=restaurant._id%>&owner=<%=restaurant.owner%>"><button>Update</button></a></p>
+		<p><a href="/delete?_id=<%=restaurant._id%>&owner=<%=restaurant.owner%>"><button>Delete</button></a></p>
+		<p><a href="/"><button>Go back</button></a></p>
+	</body>
+</html>

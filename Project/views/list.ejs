@@ -1,0 +1,27 @@
+<html>
+<head>
+<link  href="/css/styles.css" rel="stylesheet" type="text/css">
+<link  href="/css/style_ol.css" rel="stylesheet" type="text/css"> 
+</head>
+    <body>
+		<div class="header">
+  			<h1>Search Restaurant </h1>
+		</div>
+		<div class="topnav">
+  		
+		
+  		<a class="active" href="/">Go Back</a>
+
+		
+  		
+		</div>
+        <H2>Restaurants (<%= nRestaurants %>)</H2>
+        <ol>
+            <% for (var r of restaurants) { %>
+            <li>Restaurant Name: <%= r.name %><br/>Restaurant ID: <a href="/details?_id=<%= r._id %>"><%= r._id%></a></li>
+            <% } %>
+        </ol>
+	<p
+    </body>
+</html>
+

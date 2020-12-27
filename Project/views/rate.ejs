@@ -1,0 +1,32 @@
+<html>
+	<head>
+<title>Rate Restaurant</title>
+<link  href="/css/styles.css" rel="stylesheet" type="text/css">
+<link  href="/css/style_ol.css" rel="stylesheet" type="text/css"> 
+</head>
+	<body>
+	<div class="header">
+  			<h1>Rate Restaurant </h1>
+		</div>
+<div class="topnav">
+  		
+		
+  		<a class="active" href="/">Go Back</a>
+
+  		
+		</div>
+
+		<p><H2>Please rate for <a href="/details?_id=<%=_id%>"><%=name%></a></H2></p>
+		<p>
+		<ul>
+			<form action="/rate" method="POST">
+				
+				<li><input type="number" id="quantity" name="score" min="1" max="10"></li>
+				<li><input type="hidden" name="_id" value="<%=_id%>"></li>
+				<input type="submit" value="Submit">
+			</form>
+		</ul>
+		</p>
+	</body>
+</html>
+

@@ -1,0 +1,37 @@
+<html>
+	<head>
+<link  href="/css/styles.css" rel="stylesheet" type="text/css">
+<link  href="/css/style_ol.css" rel="stylesheet" type="text/css"> 
+	</head>
+    <body>
+		<div class="header">
+  			<h1>Update Restaurant</h1>
+		</div>
+		<div class="topnav">
+  		<a href="/">Go back</a>
+		</div>
+        <form action="/update" method="POST" enctype="multipart/form-data">
+		<ol>
+		<li>Restaurant_id : <%=restaurant._id%><input name ="_id" type="hidden"  value="<%=restaurant._id%>"</li>
+		
+		<li>Restaurant name: <input name="name" type="text" value="<%= restaurant.name%>" required/></li>
+		<li>Borough : <input name="borough" type="text" value="<%=restaurant.borough%>" /></li>
+		<li><%= restaurant.cuisine%>Cuisine : <input name="cuisine" type="text" value="<%=restaurant.cuisine%>" /></li>
+		<li>
+			<% if (restaurant.photo) { %>
+			<img src="data:image/<%= restaurant.mimetype %>;base64, <%= restaurant.photo %>">
+			<% } %>
+		</li>
+		<li>Photo:<br /><input type = "file" name="photo" /></li>
+		<li>Address</li>
+		<li>Street : <input name="street" type="text" value= "<%=restaurant.address.street%>" ></li>
+		<li>Building : <input name="building" type="text" value= "<%=restaurant.address.building%>" ></li>
+		<li>Zipcode : <input name="zipcode" type="text" value= "<%=restaurant.address.zipcode%>" ></li>
+		<li>GPS Coordinates(lon.): <input type ="text" name="lon" value="<%= restaurant.address.coord[0]%>" /></li>
+		<li>GPS Coordinates(lat.): <input type ="text" name="lat" value= "<%= restaurant.address.coord[1]%>" /></li>
+		<input type = "submit" value="Update" />
+
+	</ol>
+        </form>
+    </body>
+</html>

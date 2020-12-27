@@ -1,0 +1,39 @@
+<html>
+	<head>
+	<title>Create Restaurant</title>
+	<link  href="/css/styles.css" rel="stylesheet" type="text/css">
+	<link  href="/css/style_ol.css" rel="stylesheet" type="text/css"> 
+	</head>
+
+	<body>
+		<div class="header">
+  			<h1>Create Restaurant</h1>
+		</div>
+		<div class="topnav">
+  		
+		
+  		<a class="active" href="/">Go Back</a>
+
+  		
+		</div>
+		<ol>
+		<form method ="POST" action="/create" enctype="multipart/form-data">
+			<li>Restaurant Name:<br /><input type = "text" name="name" required></li>
+			<li>Borough:<br /><input type = "text" name="borough" /></li>
+			<li>Cuisine:<br /><input type = "text" name="cuisine" /></li>
+			<li>Photo:<br /><input type = "file" name="photo" /></li>
+			<li>Address<br />
+			 Street: <input type = "text" name="street" /><br />
+			</li>
+			<li>Building: <input type ="text" name="building" /></li>
+			<li>Zipcode: <input type ="text" name="zipcode" /></li>
+			<li>GPS Coordinates(lon.): <input type ="text" name="lon" /></li>
+			<li>GPS Coordinates(lat.): <input type ="text" name="lat" /></li>
+			
+			<input type = "submit" value="submit" />
+			<input type = "reset">
+		</form>
+		</ol>
+	</body>
+</html>
+

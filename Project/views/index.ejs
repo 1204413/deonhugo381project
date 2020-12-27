@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Restaurant</title>
+		<link  href="/css/styles.css" rel="stylesheet" type="text/css">
+		<link  href="/css/style_ol.css" rel="stylesheet" type="text/css"> 
+	</head>
+	<body>
+		<div class="header">
+  			<h1>Restaurant</h1>
+		</div>
+		<div class="topnav">
+  		
+		
+  		<a class="active" href="/create">Create a new Restaurant</a>
+		<a href="/logout">Logout</a>
+
+  		</div>
+		</div>
+
+		<h4>Search By <b><u>Three</u></b> Criteria </h4>
+		<form action="/search" method="get">
+			<input type="text" name = "name" placeholder="Restaurant Name">
+			<input type="text" name = "borough" placeholder="Restaurant Borough">
+			<input type="text" name = "cuisine" placeholder="Restaurant Cuisine">
+			<input type="submit" value="Search">
+		</form>
+
+		<h4>Search By <b><u>Two</u></b> Criteria </h4>
+		<form action="/search" method="get">
+			<input type="text" name = "borough" placeholder="Restaurant Borough">
+			<input type="text" name = "cuisine" placeholder="Restaurant Cuisine">
+			<input type="submit" value="Search">
+		</form>
+
+		<h4>Search By <b><u>One</u></b> Criteria </h4>
+		<form action="/search" method="get">
+		
+			<input type="text" name = "name" placeholder="Restaurant Name">
+			<input type="submit" value="Search">
+		</form>
+		<form action="/search" method="get">
+			<input type="text" name = "borough" placeholder="Restaurant Borough">
+			<input type="submit" value="Search">
+		</form>
+		<form action="/search" method="get">
+			<input type="text" name = "cuisine" placeholder="Restaurant Cuisine">
+			<input type="submit" value="Search">
+		</form>
+
+		<hr>
+		<h2><i>All Restaurant : </i></h2>
+
+		<ol>
+           		<% for (var r of restaurants) { %>
+          		<li><a href="/details?_id=<%= r._id %>"><%= r.name %></a></li>
+			<% } %>
+		</ol>
+	</body>
+</html>
